@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.2.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='stylesheets/fullcalendar.css' />
+    <script type='text/javascript' src='javascripts/fullcalendar.min.js'></script>
+    <script type='text/javascript' src='javascripts/fullcalendar.gcal.js'></script>
+  </head>
+  <body>
+      <div
+        class='calendar'
+        data-events='https://www.google.com/calendar/feeds/ra2crcoi70j700a8a19u82vq8g%40group.calendar.google.com/public/basic'
+        style='width:50%;margin:auto;background-color:salmon;'
+      ></div>
+
+      <script type='text/javascript'>
+        $(document).ready(function() {
+            $('.calendar').each(function(){
+              var calendar = $(this);
+
+              var config = calendar.data();
+
+              config['currentTimezone'] = 'America/Denver';
+
+              calendar.fullCalendar(config);
+            });
+        });
+      </script>
+  </body>
+</html>
